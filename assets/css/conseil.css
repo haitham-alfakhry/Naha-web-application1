@@ -1,0 +1,121 @@
+/* =======================================================
+   NAHA Web Application
+   Fichier : conseil-style.css
+   Auteur  : Haitham
+   Rôle    : Styles spécifiques à la page Conseil
+   Description :
+   - Cartes de conseils personnalisés
+   - Bloc newsletter intégré
+======================================================= */
+
+
+/* =======================================================
+   CARTE CONSEIL
+======================================================= */
+
+.conseil-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Effet léger au survol */
+.conseil-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+.conseil-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.conseil-card p {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+
+/* =======================================================
+   BLOC NEWSLETTER
+======================================================= */
+
+.newsletter-box {
+    background: #f7f9fc;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.newsletter-box h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+
+/* =======================================================
+   FORMULAIRE NEWSLETTER
+======================================================= */
+
+#newsletter-form {
+    display: flex;
+    gap: 12px;
+}
+
+#newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Focus utilisateur */
+#newsletter-form input[type="email"]:focus {
+    border-color: var(--primary, #4c5bf9);
+    box-shadow: 0 0 0 3px rgba(76,91,249,0.15);
+}
+
+#newsletter-form button {
+    background: var(--primary, #4c5bf9);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform .15s ease, opacity .2s ease;
+}
+
+#newsletter-form button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+#newsletter-msg {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width: 640px) {
+    #newsletter-form {
+        flex-direction: column;
+    }
+
+    #newsletter-form button {
+        width: 100%;
+    }
+}

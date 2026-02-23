@@ -1,0 +1,249 @@
+/* =======================================================
+   NAHA Web Application
+   Fichier : contact-style.css
+   Auteur  : Haitham
+   Rôle    : Styles spécifiques à la page Contact
+   Description :
+   - Hero section
+   - Formulaire de contact
+   - Cartes informatives latérales
+======================================================= */
+
+
+/* =======================================================
+   VARIABLES LOCALES (si besoin spécifique à la page)
+======================================================= */
+
+:root {
+    --primary:#4c5bf9;
+    --ink:#0f0f10;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --bg-soft:#f7f9fc;
+    --danger:#ef4444;
+    --success:#22c55e;
+    --radius-lg:18px;
+}
+
+
+/* =======================================================
+   HERO SECTION
+======================================================= */
+
+.contact-main {
+    padding-bottom: 40px;
+}
+
+.contact-hero {
+    padding: 80px 0 30px;
+    margin-top: 60px;
+}
+
+.contact-hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(76,91,249,0.08);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.contact-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 8px 0 4px;
+}
+
+.contact-sub {
+    color: var(--muted);
+    max-width: 540px;
+    font-size: 14px;
+}
+
+
+/* =======================================================
+   SECTION PRINCIPALE
+======================================================= */
+
+.contact-section {
+    padding: 8px 0 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+    gap: 24px;
+}
+
+@media (max-width:840px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =======================================================
+   CARTE FORMULAIRE
+======================================================= */
+
+.contact-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 22px 20px 20px;
+    box-shadow: 0 18px 35px rgba(15,23,42,0.06);
+}
+
+.contact-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.contact-card__sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+
+/* =======================================================
+   CHAMPS DE FORMULAIRE
+======================================================= */
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 14px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.field input,
+.field textarea {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 9px 11px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+    background: #f9fafb;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px rgba(76,91,249,0.28);
+    background: #ffffff;
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* Messages d’erreur */
+
+.field-error {
+    min-height: 14px;
+    font-size: 12px;
+    color: var(--danger);
+}
+
+
+/* Feedback global du formulaire */
+
+.form-feedback {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+
+/* =======================================================
+   BOUTON PRINCIPAL
+======================================================= */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+    box-shadow: 0 10px 25px rgba(76,91,249,0.35);
+}
+
+.btn-primary:hover {
+    background: #3d4ad5;
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    opacity: .65;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+}
+
+
+/* =======================================================
+   COLONNE LATÉRALE
+======================================================= */
+
+.contact-side {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.side-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 16px 16px 14px;
+}
+
+.side-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.side-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.side-card ul {
+    padding-left: 18px;
+    margin-top: 4px;
+}
+
+.side-card li {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 3px;
+}

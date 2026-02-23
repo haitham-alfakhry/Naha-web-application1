@@ -1,0 +1,259 @@
+/* =======================================================
+   NAHA Web Application
+   Fichier : tableau-style.css
+   Auteur  : Haitham
+   Rôle    : Styles spécifiques au Tableau de bord
+   Description :
+   - Hero Dashboard
+   - KPIs interactifs
+   - Objectif calorique
+   - Progression journalière
+   - Charts & légendes
+   - Flip cards statistiques
+======================================================= */
+
+
+/* =======================================================
+   HERO
+======================================================= */
+
+.dash-hero {
+  background: linear-gradient(180deg,#f7f9fc 0%, #fff 60%);
+}
+
+.dash-title {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin: 28px 0 6px;
+}
+
+.dash-sub {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 22px;
+}
+
+
+/* =======================================================
+   KPIs
+======================================================= */
+
+.kpis-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.kpi {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.05);
+  min-height: 170px;
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.kpi:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+
+/* =======================================================
+   OBJECTIF CALORIQUE
+======================================================= */
+
+.goal-card {
+  background: linear-gradient(180deg,#eef2ff,#ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.10);
+}
+
+.goal-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.goal-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+}
+
+.goal-type {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.goal-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.goal-unit {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.goal-link {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.goal-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =======================================================
+   PROGRESSION JOURNALIÈRE
+======================================================= */
+
+.day-progress-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-progress-main {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.day-progress-bar {
+  margin-top: 10px;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.day-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4c5bf9, #45c778);
+  transition: width 0.4s ease-out;
+}
+
+
+/* =======================================================
+   BILAN HEBDOMADAIRE
+======================================================= */
+
+.bilan-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+
+.bilan-num.green {
+  color: #45c778;
+}
+
+
+/* =======================================================
+   CHARTS & LÉGENDE
+======================================================= */
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  padding: 0 16px 6px;
+}
+
+.chart-legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-in { background: #4ade80; }
+.legend-out { background: #60a5fa; }
+.legend-cardio { background: #facc15; }
+
+
+/* =======================================================
+   FLIP CARD (STATISTIQUES)
+======================================================= */
+
+.flip-card {
+  perspective: 1200px;
+  height: 180px;
+  position: relative;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .6s ease;
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* =======================================================
+   CONSEIL DU JOUR
+======================================================= */
+
+.tip-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.05);
+}
+
+.tip-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.tip-card p {
+  font-size: 15px;
+  color: #444;
+}
+
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width: 980px) {
+  .kpis-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-row {
+    flex-direction: column;
+  }
+}

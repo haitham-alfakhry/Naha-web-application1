@@ -1,0 +1,262 @@
+/* =======================================================
+   NAHA Web Application
+   Fichier : calculateur-style.css
+   Rôle    : Styles spécifiques à la page Calculateur
+   Description :
+   - Formulaire de calcul calorique
+   - Objectifs (maintien / perte / prise)
+   - Résultats & journal
+   - Section prochaines étapes
+======================================================= */
+
+
+/* =======================================================
+   PAGE GÉNÉRALE
+======================================================= */
+
+.calc-page {
+  min-height: calc(100vh - 72px);
+  padding: 3.5rem 1rem 4rem;
+  background: radial-gradient(circle at top, #eef2ff 0, #f9fafb 45%, #f3f4f6 100%);
+}
+
+.calc-grid {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+
+/* =======================================================
+   CARTES
+======================================================= */
+
+.card {
+  background: #ffffff;
+  border-radius: 1.9rem;
+  padding: 2.1rem 2.4rem;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.17);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.22);
+}
+
+.card.big h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+}
+
+.card.big .sub {
+  margin-bottom: 1.6rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+
+/* =======================================================
+   FORMULAIRE
+======================================================= */
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.field input,
+.field select {
+  border-radius: 0.9rem;
+  border: 1px solid #e5e7eb;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  background: #f9fafb;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.25);
+  background: #ffffff;
+}
+
+
+/* =======================================================
+   SEGMENTED CONTROL (Sexe)
+======================================================= */
+
+.segmented {
+  display: inline-flex;
+  background: #111827;
+  border-radius: 999px;
+  padding: 0.15rem;
+}
+
+.segmented-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 1.25rem;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.segmented-btn.is-active {
+  background: #22c55e;
+  color: #022c22;
+  transform: translateY(-1px);
+}
+
+
+/* =======================================================
+   RÉSULTAT
+======================================================= */
+
+.result-card {
+  margin-top: 1.7rem;
+  padding: 1.3rem 1.4rem;
+  border-radius: 1.35rem;
+  background: #eef2ff;
+  border: 1px solid rgba(79, 70, 229, 0.12);
+}
+
+.result-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.res-main {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.res-main span {
+  font-size: 1.15rem;
+}
+
+.res-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+
+/* =======================================================
+   OBJECTIFS
+======================================================= */
+
+.goals {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.goal-btn {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 0.7rem 0.9rem;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s, background 0.15s;
+}
+
+.goal-btn.is-active {
+  border-color: #4c5bf9;
+  box-shadow: 0 10px 26px rgba(76, 91, 249, 0.25);
+  transform: translateY(-1px);
+}
+
+.goal-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.goal-kcal {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.goal-sub {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.goal-active-text {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #4c5bf9;
+  display: none;
+}
+
+.goal-btn.is-active .goal-active-text {
+  display: block;
+}
+
+
+/* =======================================================
+   PROCHAINES ÉTAPES
+======================================================= */
+
+.next-steps {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.next-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.next-step {
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goals {
+    grid-template-columns: 1fr;
+  }
+
+  .next-steps__grid {
+    grid-template-columns: 1fr;
+  }
+}

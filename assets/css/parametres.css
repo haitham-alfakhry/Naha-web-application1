@@ -1,0 +1,104 @@
+/* =======================================================
+   NAHA Web Application
+   Fichier : parametres.css
+   Auteur  : Haitham
+   Rôle    : Styles spécifiques à la page Paramètres
+   Description :
+   - Mise en page des cartes de paramètres
+   - Formulaires utilisateur
+   - Boutons d’action
+======================================================= */
+
+
+/* =======================================================
+   GRID PRINCIPAL
+   Organisation responsive des cartes paramètres
+======================================================= */
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+
+/* =======================================================
+   CARTES PARAMÈTRES
+======================================================= */
+
+.card-settings {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Effet léger au survol */
+.card-settings:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-settings h2 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+
+/* =======================================================
+   FORMULAIRES
+======================================================= */
+
+.card-settings label {
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    display: block;
+    color: #374151;
+}
+
+.card-settings input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Effet focus */
+.card-settings input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+    outline: none;
+}
+
+
+/* =======================================================
+   BOUTONS
+======================================================= */
+
+.card-settings .btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background .2s ease, transform .1s ease;
+}
+
+.card-settings .btn:hover {
+    background: #4338ca;
+}
+
+.card-settings .btn:active {
+    transform: translateY(1px);
+}
